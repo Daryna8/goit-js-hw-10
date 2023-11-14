@@ -10,6 +10,12 @@
   font-weight: 700;
 }
 
+.cat-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
 .cat-img {
   padding: 20px;
   max-width: 400px;
