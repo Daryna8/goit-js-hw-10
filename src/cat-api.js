@@ -5,14 +5,12 @@ axios.defaults.headers.common['x-api-key'] =
 
 export function fetchBreeds(breeds) {
   const url = 'https://api.thecatapi.com/v1/breeds';
-  return fetch(url).then(res => res.json());
+  return axios.get(url).then(res => res.data);
 }
 
 export function fetchCatByBreed(breedId) {
   const IMG_URL = 'https://api.thecatapi.com/v1/images/search';
   const PARAMS = `?breed_ids=${breedId}`;
-
   const infoUrl = `${IMG_URL}${PARAMS}`;
-
-  return fetch(infoUrl).then(res => res.json());
+  return axios.get(infoUrl).then(res => res.data);
 }
